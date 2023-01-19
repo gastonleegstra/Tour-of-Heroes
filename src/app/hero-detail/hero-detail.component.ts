@@ -11,6 +11,11 @@ import { Location } from "@angular/common";
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit{
+   save():void {
+    if (this.hero) {
+      this.heroService.updateHero(this.hero).subscribe(()=>this.goBack())
+    }
+   }
 
    hero: Hero|undefined;
   constructor(
